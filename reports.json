@@ -1,0 +1,20 @@
+[
+    {
+        "type": "buraco",
+        "description": "buraco grande",
+        "latitude": -9.6444758,
+        "longitude": -35.7037868,
+        "address": "R. Arthur Bulhões, 496 - Jatiúca, Maceió - AL, 57035-856, Brasil",
+        "timestamp": "2025-08-15T15:10:50.573Z",
+        "id": "7ade6a6e-3a03-4724-af2c-d9d9fb25a376"
+    },
+    {
+        "type": "buraco",
+        "description": "buracos por toda a via, 3 grandes buracos a esquerda",
+        "latitude": -9.6667302,
+        "longitude": -35.713822,
+        "address": "R. Jangadeiros Alagoanos, 925 - Pajuçara, Maceió - AL, 57030-000, Brasil",
+        "timestamp": "2025-08-15T15:19:06.835Z",
+        "id": "061a4f68-029b-47bd-89c2-97562459153a"
+    }
+]

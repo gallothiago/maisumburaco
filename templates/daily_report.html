@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: 20px auto; background-color: #ffffff; padding: 20px; border-radius: 8px; }
+        h1 { color: #004d40; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+        th { background-color: #00796b; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório Diário de Ocorrências - MAISUMBURACOMACEIO</h1>
+        <p>Olá,</p>
+        <p>Este é um relatório automático gerado pelo sistema MAISUMBURACOMACEIO com as ocorrências reportadas nas últimas 24 horas ({{ report_date }}).</p>
+        
+        {% if reports %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Tipo</th>
+                        <th>Endereço</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for report in reports %}
+                    <tr>
+                        <td>{{ report.timestamp.strftime('%H:%M') }}</td>
+                        <td>{{ report.type }}</td>
+                        <td>{{ report.address or 'N/A' }}</td>
+                        <td>{{ report.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p><strong>Nenhuma nova ocorrência foi registrada nas últimas 24 horas.</strong></p>
+        {% endif %}
+
+        <p>Atenciosamente,<br>Sistema MAISUMBURACOMACEIO</p>
+    </div>
+</body>
+</html>

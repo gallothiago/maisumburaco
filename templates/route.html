@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Verificar Rota - MAISUMBURACOMACEIO
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+
+    <section id="map-container">
+        <h2>Mapa de Ocorrências na Rota</h2>
+        <div id="map"></div>
+    </section>
+
+    <aside class="sidebar">
+        <section id="route-search-container">
+            <h2>Pesquisar Problemas</h2>
+            <div id="route-form">
+                <label for="start-address">Endereço de Partida:</label>
+                <input type="text" id="start-address" placeholder="Digite o endereço de partida" required>
+                <label for="end-address">Endereço de Destino:</label>
+                <input type="text" id="end-address" placeholder="Digite o endereço de destino" required>
+                <button type="button" id="verify-route-btn">Verificar Rota</button>
+            </div>
+        </section>
+
+        <section id="route-results-container" style="display: none;">
+            <h2 id="route-summary">Análise da Rota</h2>
+            <div id="route-reports-list"></div>
+            <button type="button" id="clear-route-btn">Limpar Rota</button>
+        </section>
+    </aside>
+
+</div>
+{% endblock %}

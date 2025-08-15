@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Reportar Problema - MAISUMBURACOMACEIO
+{% endblock %}
+
+{% block content %}
+<section id="map-container">
+    <h2>Selecione o Local do Problema</h2>
+    <div id="map"></div>
+</section>
+
+<section id="report-form-container">
+    <h2>Reportar um Problema</h2>
+    <p class="form-instruction">Clique no mapa para marcar o local exato ou digite o endereço abaixo.</p>
+    <form id="report-form">
+        <label for="problem-address">Endereço da Ocorrência:</label>
+        <input type="text" id="problem-address" placeholder="Comece a digitar o endereço...">
+        
+        <label for="problem-type">Tipo de Problema:</label>
+        <select id="problem-type" name="problem-type" required>
+            <option value="buraco">Buraco na via</option>
+            <option value="vazamento">Vazamento de água</option>
+            <option value="entupimento">Bueiro entupido</option>
+            <option value="outros">Outros</option>
+        </select>
+        
+        <label for="problem-description">Descrição:</label>
+        <textarea id="problem-description" name="problem-description" rows="4" required></textarea>
+        <button type="submit">Enviar Relato</button>
+    </form>
+    <p id="selected-address" class="address-preview"></p>
+</section>
+{% endblock %}

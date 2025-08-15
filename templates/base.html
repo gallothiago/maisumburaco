@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MAISUMBURACOMACEIO{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div id="header-weather-widget">
+                <p>Carregando clima...</p>
+            </div>
+            <h1><a href="{{ url_for('index') }}">MAISUMBURACOMACEIO</a></h1>
+        </div>
+        <p>Mapeando buracos e prevendo alagamentos em Maceió em tempo real</p>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('report_page') }}">Reportar um Problema</a></li>
+                <li><a href="{{ url_for('route_page') }}">Verificar Rota</a></li>
+                <li><a href="{{ url_for('resolved_page') }}">Ocorrências Resolvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 MAISUMBURACOMACEIO. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/script.js', v='1.2') }}"></script>
+</body>
+</html>
