@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-    --primary-color: #00796b; /* Verde principal */
-    --primary-dark: #004d40;   /* Verde escuro para hover e header */
-    --accent-color: #0097a7;   /* Azul ciano para destaques */
-    --danger-color: #d32f2f;   /* Vermelho para alertas e botões de exclusão */
-    --light-gray: #f4f4f9;     /* Cor de fundo principal */
-    --medium-gray: #e0e0e0;    /* Cor de bordas suaves */
-    --dark-gray: #424242;      /* Cor de texto principal */
-    --text-light: #616161;     /* Cor de texto secundário */
+    /* Nova paleta de cores baseada no logotipo */
+    --primary-color: #FF7043; /* Laranja vibrante do cone */
+    --primary-dark: #F4511E;   /* Laranja mais escuro para hover */
+    --dark-color: #263238;     /* Cinza-asfalto escuro da base do logo */
+    --danger-color: #d32f2f;   /* Vermelho para alertas */
+    --light-gray: #f4f4f9;     /* Fundo principal */
+    --medium-gray: #e0e0e0;    /* Bordas suaves */
+    --dark-gray: #424242;      /* Texto principal */
+    --text-light: #616161;     /* Texto secundário */
     --white: #ffffff;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -27,9 +28,9 @@ body {
 
 /* --- CABEÇALHO E NAVEGAÇÃO --- */
 header {
-    background: var(--primary-dark);
+    background: var(--dark-color);
     color: var(--white);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem 1.5rem;
     text-align: center;
 }
 .header-top {
@@ -37,22 +38,50 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 0.5rem;
 }
-header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; flex-grow: 1; }
-header h1 a { color: var(--white); text-decoration: none; }
-header p { margin: 0.25rem 0 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
+.logo-link {
+    display: flex;
+    align-items: center; /* Chave para o alinhamento vertical */
+    gap: 15px;
+    text-decoration: none;
+    color: var(--white);
+}
+.header-logo {
+    height: 50px;
+    width: auto;
+}
+header h1 { 
+    margin: 0; 
+    font-size: 2.2rem; 
+    font-weight: 700;
+}
+header p { margin: 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
 
 .main-nav {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: transparent;
     margin-top: 1.5rem;
     border-radius: 8px;
 }
-.main-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-.main-nav ul li a { display: block; color: var(--white); text-align: center; padding: 14px 20px; text-decoration: none; font-weight: 500; transition: background-color 0.3s; border-radius: 8px; }
-.main-nav ul li a:hover { background-color: var(--primary-dark); }
+.main-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.main-nav ul li a { 
+    display: block; 
+    color: var(--white); 
+    text-align: center; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: background-color 0.3s, border-color 0.3s; 
+    border-radius: 8px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.main-nav ul li a:hover { 
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
 
-/* --- NOVO WIDGET DE CLIMA NO CABEÇALHO --- */
+/* --- WIDGET DE CLIMA NO CABEÇALHO --- */
 #header-weather-widget {
     position: absolute;
     left: 0;
@@ -68,22 +97,10 @@ header p { margin: 0.25rem 0 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8)
     font-size: 0.9rem;
     min-width: 150px;
 }
-#header-weather-widget img {
-    width: 40px;
-    height: 40px;
-}
-.header-weather-details {
-    text-align: left;
-}
-.header-temp {
-    font-weight: 700;
-    font-size: 1.1rem;
-    display: block;
-}
-.header-desc {
-    font-size: 0.8rem;
-    text-transform: capitalize;
-}
+#header-weather-widget img { width: 40px; height: 40px; }
+.header-weather-details { text-align: left; }
+.header-temp { font-weight: 700; font-size: 1.1rem; display: block; }
+.header-desc { font-size: 0.8rem; text-transform: capitalize; }
 
 /* --- LAYOUT PRINCIPAL E SEÇÕES --- */
 main {
@@ -94,30 +111,27 @@ main {
     width: 100%;
     box-sizing: border-box;
 }
-
 section {
     background-color: var(--white);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
-
 h2 {
-    color: var(--primary-dark);
-    border-bottom: 2px solid var(--accent-color);
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.75rem;
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
-
 #map { height: 65vh; border-radius: 8px; margin-top: 1rem; min-height: 450px; background-color: var(--medium-gray); }
 
 /* --- FORMULÁRIOS E BOTÕES --- */
 .form-instruction { font-size: 0.9rem; color: var(--text-light); margin-top: 0; margin-bottom: 1rem; text-align: center; }
 #report-form label, #route-form label { display: block; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 500; }
 #report-form select, #report-form textarea, #report-form input, #route-form input { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--medium-gray); border-radius: 8px; box-sizing: border-box; font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s; }
-#report-form select:focus, #report-form textarea:focus, #report-form input:focus, #route-form input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(0, 151, 167, 0.2); }
+#report-form select:focus, #report-form textarea:focus, #report-form input:focus, #route-form input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.2); }
 button { border: none; padding: 0.9rem 1.5rem; margin-top: 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 700; width: 100%; transition: background-color 0.3s, transform 0.2s; }
 button:hover { transform: translateY(-2px); }
 #report-form button, #verify-route-btn { background-color: var(--primary-color); color: var(--white); }
@@ -128,14 +142,14 @@ button:hover { transform: translateY(-2px); }
 /* --- LISTAS E ITENS --- */
 .address-preview { font-style: italic; color: var(--text-light); margin-top: 1rem; padding: 0.75rem; background-color: var(--light-gray); border-radius: 8px; min-height: 1.2em; }
 #reports-list, #route-reports-list, #resolved-list { margin-top: 1rem; max-height: 450px; overflow-y: auto; padding-right: 10px;}
-.report-item { background-color: var(--white); border: 1px solid var(--medium-gray); border-left: 5px solid var(--accent-color); padding: 1rem; border-radius: 8px; margin-bottom: 0.75rem; transition: box-shadow 0.3s, border-left-color 0.3s; }
+.report-item { background-color: var(--white); border: 1px solid var(--medium-gray); border-left: 5px solid var(--primary-color); padding: 1rem; border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; transition: box-shadow 0.3s, border-left-color 0.3s; }
 .report-item:hover { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
-.report-item .address { font-style: italic; color: var(--primary-color); margin-top: 0.5rem; }
+.report-item .address { font-style: italic; color: var(--primary-dark); margin-top: 0.5rem; }
 .report-item button.resolve-button { background-color: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; width: auto; margin-top: 1rem; float: none; display: block; margin-left: auto; font-size: 0.85rem; font-weight: 500; }
 .report-item button.resolve-button:hover { background-color: var(--primary-dark); transform: none; }
 .report-item-on-route { border-left-color: var(--danger-color); }
 
-/* --- REMOVENDO ESTILOS DO WIDGET ANTIGO --- */
+/* --- WIDGET DE METEOROLOGIA (ANTIGO) --- */
 #weather-container { display: none; } 
 
 /* --- LAYOUTS DE PÁGINA E RESPONSIVIDADE --- */
@@ -143,19 +157,20 @@ button:hover { transform: translateY(-2px); }
 .page-container { display: flex; flex-wrap: wrap; gap: 1.5rem; width: 100%; }
 .page-container > #map-container { flex: 3; min-width: 350px; }
 .page-container > .sidebar { flex: 2; min-width: 320px; }
-
 .resolved-actions { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; }
 .resolved-actions button { width: auto; padding: 0.5rem 1rem; font-size: 0.85rem; margin-top: 0; }
-.undo-button { background-color: var(--accent-color) !important; color: var(--white); }
-.undo-button:hover { background-color: #007a8a !important; transform: none; }
-.delete-permanently-button { background-color: var(--danger-color) !important; color: var(--white); }
-.delete-permanently-button:hover { background-color: #a72424 !important; transform: none; }
+.undo-button { background-color: var(--accent-color); color: var(--white); }
+.undo-button:hover { background-color: #007a8a; transform: none; }
+.delete-permanently-button { background-color: var(--danger-color); color: var(--white); }
+.delete-permanently-button:hover { background-color: #a72424; transform: none; }
 
-footer { text-align: center; padding: 2rem 1rem; background-color: #313131; color: rgba(255, 255, 255, 0.7); margin-top: auto; }
+footer { text-align: center; padding: 2rem 1rem; background-color: #212121; color: rgba(255, 255, 255, 0.7); margin-top: auto; }
 
 /* Ajustes para telas menores */
 @media (max-width: 992px) { 
     .page-container { flex-wrap: wrap; } 
     .header-top { justify-content: center; }
     #header-weather-widget { position: static; transform: none; margin-bottom: 1rem; justify-content: center; }
+    .logo-link { flex-direction: column; gap: 5px; }
+    header h1 { font-size: 1.8rem; }
 }

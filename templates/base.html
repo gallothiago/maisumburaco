@@ -13,7 +13,11 @@
             <div id="header-weather-widget">
                 <p>Carregando clima...</p>
             </div>
-            <h1><a href="{{ url_for('index') }}">MAISUMBURACOMACEIO</a></h1>
+            <!-- ESTRUTURA CORRIGIDA PARA O LOGO E TÍTULO -->
+            <a href="{{ url_for('index') }}" class="logo-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logotipo MAISUMBURACOMACEIO" class="header-logo">
+                <h1>MAISUMBURACOMACEIO</h1>
+            </a>
         </div>
         <p>Mapeando buracos e prevendo alagamentos em Maceió em tempo real</p>
         <nav class="main-nav">
@@ -34,6 +38,6 @@
         <p>© 2025 MAISUMBURACOMACEIO. Todos os direitos reservados.</p>
     </footer>
     
-    <script src="{{ url_for('static', filename='js/script.js', v='1.2') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js', v='1.1') }}"></script>
 </body>
 </html>
