@@ -255,4 +255,4 @@ if __name__ == '__main__':
     scheduler.add_job(cleanup_old_resolved_reports, trigger='cron', hour=3, minute=0)
     scheduler.start()
     print("Agendador de tarefas iniciado.")
-    app.run(debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=8080, debug=True, use_reloader=False)
