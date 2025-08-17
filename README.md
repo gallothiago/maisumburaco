@@ -2,7 +2,6 @@
 
 Aplicação web para mapeamento colaborativo de problemas urbanos, análise de dados e previsão de alagamentos em Maceió, Alagoas.
 
-![Maceió]([https://www.infoescola.com/wp-content/uploads/2017/04/maceio-al-140669145.jpg](https://assets.brasildefato.com.br/2024/09/image_processing20200201-29235-1af4kg2.jpg))
 
 ---
 
